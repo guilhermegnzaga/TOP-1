@@ -9,6 +9,7 @@
 #include <string>
 #include <type_traits>
 
+#include "util/typedefs.hpp"
 #include "util/type_traits.hpp"
 
 namespace top1::tree {

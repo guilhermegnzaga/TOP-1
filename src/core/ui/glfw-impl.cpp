@@ -1,7 +1,6 @@
-#define GLFW_INCLUDE_ES3
 #include <GLFW/glfw3.h>
 #include <NanoCanvas.h>
-#define NANOVG_GLES3_IMPLEMENTATION
+#define NANOVG_GL2_IMPLEMENTATION
 #include <nanovg_gl.h>
 #include <nanovg_gl_utils.h>
 
@@ -150,7 +149,7 @@ namespace top1::ui {
 
     glfwMakeContextCurrent(window);
 
-    vg = nvgCreateGLES3(NVG_ANTIALIAS | NVG_STENCIL_STROKES | NVG_DEBUG);
+    vg = nvgCreateGL2(NVG_ANTIALIAS | NVG_STENCIL_STROKES | NVG_DEBUG);
     if (vg == NULL) {
       printf("Could not init nanovg.\n");
       return;
@@ -216,7 +215,7 @@ namespace top1::ui {
 
       }
 
-    nvgDeleteGLES3(vg);
+    nvgDeleteGL2(vg);
 
     glfwTerminate();
 

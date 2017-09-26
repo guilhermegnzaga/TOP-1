@@ -152,7 +152,7 @@ namespace top1 {
           writeSlice.out = writeSlice.in + std::min<int>(
             FrameBufSize, tb.clipboard.data.size() - startIdx);
 
-          if ((ulong)writeSlice.size() > tb.clipboard.data.size()) break;
+          if ((long)writeSlice.size() > tb.clipboard.data.size()) break;
           if (writeSlice.size() == 0) break;
 
           framebuf.clear();

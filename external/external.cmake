@@ -5,9 +5,9 @@ file(GLOB_RECURSE external_src
   "${CMAKE_CURRENT_SOURCE_DIR}/external/src/*.c"
   "${CMAKE_CURRENT_SOURCE_DIR}/external/src/*.cpp"
 )
-add_library(external ${external_src})
-target_include_directories(external PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/external/include)
-set_target_properties(external PROPERTIES LINKER_LANGUAGE CXX)
+add_library(external INTERFACE)
+target_include_directories(external INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/external/include)
+# set_target_properties(external PROPERTIES LINKER_LANGUAGE CXX)
 
 # Nanovg
 execute_process(COMMAND git submodule update --init -- external/nanovg
@@ -15,7 +15,7 @@ WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
 file(GLOB_RECURSE nanovg_src "${CMAKE_CURRENT_SOURCE_DIR}/external/nanovg/src/*.c")
 add_library(nanovg ${nanovg_src})
 target_include_directories(nanovg INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/external/nanovg/src)
-target_link_libraries(nanovg INTERFACE GLESv2)
+# target_link_libraries(nanovg INTERFACE GLESv2)
 
 # NanoCanvas
 execute_process(COMMAND git submodule update --init -- external/NanoCanvas
