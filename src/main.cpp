@@ -41,7 +41,9 @@ int main(int argc, char *argv[]) {
 
     Globals::jackAudio.startProcess();
 
-    Globals::notifyExit.wait(lock);
+    LOGI << "Starting UI";
+    Globals::ui.mainRoutine();
+    // Globals::notifyExit.wait(lock);
 
   } catch (const char* e) {
     LOGF << e;

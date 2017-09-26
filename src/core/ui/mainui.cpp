@@ -13,7 +13,7 @@ namespace top1::ui {
   }
 
   void MainUI::init() {
-    uiThread = std::thread(MainUI::mainRoutine);
+    //uiThread = std::thread(MainUI::mainRoutine);
   }
 
   void MainUI::exit() {

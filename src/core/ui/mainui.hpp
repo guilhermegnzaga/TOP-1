@@ -6,12 +6,12 @@ namespace top1::ui {
 
   class MainUI : public Screen {
 
+  public:
     static void mainRoutine();
 
     bool globKeyPre(Key key);
     bool globKeyPost(Key key);
 
-  public:
 
     ui::PressedKeys keys;
     DefaultScreen defaultScreen;
